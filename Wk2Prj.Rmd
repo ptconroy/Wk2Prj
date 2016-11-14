@@ -1,0 +1,31 @@
+---
+title: "Leaflet Project"
+author: "Patrick Conroy"
+date: "11/14/2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r load, echo=FALSE}
+suppressPackageStartupMessages(library(leaflet))
+```
+
+## Good Stuff in San Anto on November 14, 2016
+
+```{r map, echo=FALSE}
+lats = c(29.448893, 29.443214, 29.441731)
+lngs = c(-98.487651, -98.476590, -98.479180)
+pops = c("<a href='http://www.papertigersa.com/'>Paper Tiger</a>",
+         "<a href='http://browncoffeeco.com'>The Brown Coffee Company</a>",
+         "<a href='http://thegranarysa.com'>The Granary 'Cue & Brew</a>")
+
+leaflet() %>% addTiles() %>%
+    addMarkers(lat = lats,
+               lng = lngs,
+               popup = pops)
+```
+
